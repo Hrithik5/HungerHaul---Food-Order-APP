@@ -1,4 +1,4 @@
-# 🍔 HungerHaul - Food Order App
+# 🍔 HungerHaul - Food Order App [Backend]
 
 HungerHaul is a full-stack food ordering application built with **TypeScript**. It enables users to explore menus, place orders, and track deliveries with a clean and intuitive UI. Admins can manage the platform with dedicated access, making it a complete end-to-end food ordering system.
 
@@ -95,8 +95,5 @@ All backend APIs are documented using Postman.
 ```bash
 git clone https://github.com/Hrithik5/HungerHaul---Food-Order-APP.git
 cd HungerHaul---Food-Order-APP
-cd server
 npm install
-# Copy and update environment variables
-cp .env.example .env
 npm run dev
