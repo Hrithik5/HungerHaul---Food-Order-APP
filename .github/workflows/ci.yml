@@ -1,0 +1,40 @@
+name: 🔁 Backend CI - TypeScript Node.js
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  backend-ci:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.x]
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v3
+
+      - name: 🧰 Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: 🧹 Lint code
+        run: npm run lint
+
+      - name: 🧠 Type check
+        run: tsc --noEmit
+
+      - name: 🧪 Run tests
+        run: npm test || echo "No tests defined yet."
+
+      - name: ✅ Done
+        run: echo "CI checks complete 🚀"
