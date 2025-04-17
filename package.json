@@ -7,7 +7,10 @@
     "dev": "nodemon src/index.ts",
     "start": "node dist/index.js",
     "build": "tsc -p .",
-    "postinstall": "npm run build"
+    "postinstall": "npm run build",
+    "start": "ts-node src/index.ts",
+    "lint": "eslint . --ext .ts",
+    "test": "echo \"No tests yet\""
   },
   "engines": {
     "node": "14.15.2",
